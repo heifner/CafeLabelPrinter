@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>
+  <!-- true for layout top to bottom (down).
+       false for layout left to right (across). 
+  -->
+  <layout-top-to-bottom>false</layout-top-to-bottom>
+  <!-- Required named groups of form (?<name>)
+         class, firstname, lastname, num_meals, meal_code, meal
+   -->
+  <main-regex><![CDATA[(?<class>Preschool|Kindergarten|1st|2nd|3rd|4th|5th|6th|7th|8th|Freshman|Sophomore|Junior|Senior)[ \t](?<lastname>[\d\w ]+), (?<firstname>[\d\w ]+)[ \t](?<num_meals>\d+)[ \t](?<meal_code>\w+):(?<meal>[-\.\d\w ]+?)(?:[\/\d]+)]]></main-regex>
+  <!-- Required named groups of form (?<name>)
+         firstname, lastname
+   -->
+  <extra-regex><![CDATA[[\w\d-]+[ \t](?<lastname>[\d\w ]+), (?<firstname>[\d\w ]+)$]]></extra-regex>
+  <!-- Required named groups of form (?<name>)
+         num, meal_code, extra
+   -->
+  <extra-line-regex><![CDATA[[[ ]+(?<num>\d+)[ \t]+(?:(?<meal_code>\w+):)?(?<extra>[-\.\w\d ]+)]]></extra-line-regex>
+  <!-- String that indicates that an extra item is a meal -->
+  <meal-str>meal</meal-str>
+  <!-- Indicate any class name replacements that should be done.
+       Note that the replacement string is used for natural sorting (Chars before numbers. e.g. K4, 1st)
+   -->
+  <class-replace-str><match>Preschool</match><replace>K4</replace></class-replace-str>
+  <class-replace-str><match>Kindergarten</match><replace>K5</replace></class-replace-str>
+  <class-replace-str><match>Freshman</match><replace>9th</replace></class-replace-str>
+  <class-replace-str><match>Sophomore</match><replace>10th</replace></class-replace-str>
+  <class-replace-str><match>Junior</match><replace>11th</replace></class-replace-str>
+  <class-replace-str><match>Senior</match><replace>12th</replace></class-replace-str>
+</config>
