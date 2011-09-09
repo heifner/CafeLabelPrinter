@@ -15,7 +15,7 @@
   <!-- Required named groups of form (?<name>)
          num, meal_code, extra
    -->
-  <extra-line-regex><![CDATA[[[ ]+(?<num>\d+)[ \t]+(?:(?<meal_code>\w+):)?(?<extra>[-\.\w\d ]+)]]></extra-line-regex>
+  <extra-line-regex><![CDATA[[[ ]*(?<num>\d+)[ \t]+(?:(?<meal_code>\w+):)?(?<extra>[-\.\w\d ]+)]]></extra-line-regex>
   <!-- String that indicates that an extra item is a meal -->
   <meal-str>meal</meal-str>
   <!-- Indicate any class name replacements that should be done.
