@@ -7,11 +7,11 @@
   <!-- Required named groups of form (?<name>)
          class, firstname, lastname, num_meals, meal_code, meal
    -->
-  <main-regex><![CDATA[(?<class>Preschool|Kindergarten|1st|2nd|3rd|4th|5th|6th|7th|8th|Freshman|Sophomore|Junior|Senior)?[ \t]?(?<lastname>[\d\w ]+), (?<firstname>[\d\w ]+)[ \t](?<num_meals>\d+)[ \t](?<meal_code>\w+):(?<meal>[-\.\d\w& ]+?)(?:[\/\d]+)]]></main-regex>
+  <main-regex><![CDATA[(?<class>Preschool|Kindergarten|1st|2nd|3rd|4th|5th|6th|7th|8th|Freshman|Sophomore|Junior|Senior)?[ \t]?(?<lastname>[\d\w\. ]+), (?<firstname>[\d\w\. ]+)[ \t](?<num_meals>\d+)[ \t](?<meal_code>\w+):(?<meal>[-\.\d\w& ]+?)(?:[\/\d]+)]]></main-regex>
   <!-- Required named groups of form (?<name>)
          firstname, lastname
    -->
-  <extra-regex><![CDATA[[\w\d-]+[ \t](?<lastname>[\d\w ]+), (?<firstname>[\d\w ]+)$]]></extra-regex>
+  <extra-regex><![CDATA[[\w\d-]+[ \t](?<lastname>[\d\w\. ]+), (?<firstname>[\d\w\. ]+)$]]></extra-regex>
   <!-- Required named groups of form (?<name>)
          num, meal_code, extra
    -->
